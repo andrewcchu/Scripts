@@ -8,7 +8,7 @@ The `test_run.py` script was created for running multiple test cases at a time f
 
 ### Dependencies
 
-Compatible versions of both Python and Pip pre-exist on data.cs.purdue.edu machines.
+Compatible versions of both Python and Pip pre-exist on Purdue CS machines.
 
 **[Python](https://www.python.org/downloads/release/python-2715rc1/)**
 

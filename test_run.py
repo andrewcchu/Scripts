@@ -5,9 +5,10 @@ from termcolor import colored
 import sys
 import os
 
-success = True
-counter = 1
+test_module = ''
 test_runs = 0
+counter = 1
+success = True
 
 while True:
 	test_module = raw_input('Enter the name of the test module: ')

@@ -8,16 +8,17 @@ The `test_run.py` script was created for running multiple test cases at a time f
 
 ### Dependencies
 
+Compatible versions of both Python and Pip pre-exist on data.cs.purdue.edu machines.
+
 **[Python](https://www.python.org/downloads/release/python-2715rc1/)**
 
 * Python v2.7.15rc1+
 
 **Pip**
 
-* sudo apt-get install python-pip
+* `sudo apt-get install python-pip`
 * This script uses the python package `termcolor`.
   * To install, run `pip install termcolor`
-
 ### Usage
 
 * Place the python file into desired folder containing test executable

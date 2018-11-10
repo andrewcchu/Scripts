@@ -14,11 +14,12 @@ Compatible versions of both Python and Pip pre-exist on data.cs.purdue.edu machi
 
 * Python v2.7.15rc1+
 
-**Pip**
+**[Pip](https://pypi.org/project/pip/)**
 
-* `sudo apt-get install python-pip`
+* Pip v9.0.1+
 * This script uses the python package `termcolor`.
   * To install, run `pip install termcolor`
+  
 ### Usage
 
 * Place the python file into desired folder containing test executable
@@ -26,3 +27,5 @@ Compatible versions of both Python and Pip pre-exist on data.cs.purdue.edu machi
 
 Alternatively, place the script in any directory and create an alias in your `.bashrc` to access from anywhere.
 * Example: `alias confirm="python /homes/chu108/cs240/test_run.py"`
+
+Once running, practical usage of the script should be self-explanatory.

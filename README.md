@@ -4,7 +4,7 @@ Collection of scripts for miscellaneous projects.
 
 ## rush.py
 
-`rush.py` is a simple script which generates a "rides list" - assigning potential new members brothers. It was created to aid me in my position as Rush Chairman at Sigma Chi at Purdue.
+`rush.py` is a simple script which generates a "rides list" (CSV format) - assigning potential new members brothers. It was created to aid me in my position as Rush Chairman at Sigma Chi at Purdue.
 
 ### Dependencies
 

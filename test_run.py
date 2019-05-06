@@ -4,20 +4,19 @@ from subprocess import call
 from termcolor import colored
 import sys
 import os
+import glob
 
 test_module = ''
 test_runs = 0
 counter = 1
 success = True
 
-while True:
-	test_module = raw_input('Enter the name of the test module: ')
-	test_module = os.getcwd() + '/' + test_module.strip()
-	if os.path.isfile(test_module):
-		break
-	else:
-		print colored('\nPlease enter a valid test module name', 'red'), colored(u'\u274C\n', 'red')
+test_module = glob.glob("*_test")
+if not test_module:
+    print colored('No _test file found', 'red'), colored(u'\u274C\n', 'red')
+    sys.exit();
 
+test_module = test_module[0]
 while True:
 	test_runs = raw_input('Enter desired number of test case runs: ')
 	try:

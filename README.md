@@ -4,7 +4,7 @@ Collection of scripts for miscellaneous projects.
 
 ## rush.py
 
-`rush.py` is a simple script which generates a "rides list" (CSV format) - assigning potential new members brothers. It was created to aid me in my position as Rush Chairman at Sigma Chi at Purdue.
+`rush.py` is a simple script which generates a "rides list" - assigning potential new members brothers. It was created to aid me in my position as Rush Chairman at Sigma Chi at Purdue.
 
 ### Dependencies
 
@@ -19,8 +19,12 @@ Collection of scripts for miscellaneous projects.
     
     -   Path to a file for a `brothers.csv` file (containing names of brothers to assign PNMs to)
         
+        -   Format of CSV should be a sole list (1 column of names)
+            
     -   Path to a file for a `pnms.csv` file (containing names of PNMs)
         
+        -   Format of CSV should be: Name | Dorm | Phone Number
+            
     -   Path to directory where created ride list should be placed
         
 -   Optional flags

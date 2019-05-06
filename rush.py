@@ -8,8 +8,9 @@ from datetime import datetime
 
 # Parser definition and setup
 parser = argparse.ArgumentParser(description='Script to generate rides list for Sigma Chi Rush @ Purdue University\nAndrew Chu - Summer 2019', formatter_class=RawTextHelpFormatter)
-parser.add_argument('brothersCsvDir', type=str, help='Input directory for brothers .csv file')
-parser.add_argument('pnmCsvDir', type=str, help='Input directory for PNMs .csv file')
+parser.add_argument('brothersCsvDir', type=str, help='Input path for brothers .csv file')
+parser.add_argument('pnmCsvDir', type=str, help='Input path for PNMs .csv file')
+parser.add_argument('outputDir', type=str, help='Output directory for the finished rides.csv file')
 parser.add_argument('--randomize', default=0, help='Randomly assign rides versus sequentially (i.e. Brothers will not have the same PNMs assigned every time).\n--randomize=0 (Default; not randomized)\n--randomize=1 (Randomize list used for dictionary initialization)')
 args = parser.parse_args()
 
@@ -57,12 +58,13 @@ def main():
 	# Pass in path as arguments 0 and 1 to function
 	brotherPath = args.brothersCsvDir
 	newMemberPath = args.pnmCsvDir
+	outputDir = args.outputDir
 	randomize = args.randomize
 
 	# Dictionary of assigned rides
 	rides = buildRides(brotherPath, newMemberPath, randomize)
 	filename = 'rides_' + datetime.today().strftime('%m-%d-%Y') + '.csv'
-	output = '/Users/andrewchu/Desktop/' + filename
+	output = outputDir + filename
 
 	# Write to csv file
 	with open(output, mode='w', encoding='utf-8-sig') as rideCsv:

@@ -23,7 +23,7 @@ Collection of scripts for miscellaneous projects.
             
     -   Path to a file for a `pnms.csv` file (containing names of PNMs)
         
-        -   Format of CSV should be: Name | Dorm | Phone Number
+        -   Format of CSV should be three columns: Name | Dorm | Phone Number
             
     -   Path to directory where created ride list should be placed
         

@@ -2,6 +2,45 @@
 
 Collection of scripts for miscellaneous projects.
 
+## slurm_scheduler.sh -- Slurm Job Scheduler Script with Dependency Management
+
+This Bash script is designed to help users submit Slurm jobs and manage job dependencies efficiently. It allows users to submit an initial job and then schedule additional jobs with 'afterany' dependencies based on the initial job's completion or an existing job's completion. The script is flexible and accommodates both scenarios seamlessly.
+
+### Usage
+
+#### Command-line Options
+
+- `-i <initial_job_script>`: Specify the initial job script to submit. This script will be the starting point for job submissions, and subsequent jobs will depend on it.
+- `-e <existing_job_id>`: Specify an existing job ID to use as a dependency. If this option is used, the script will schedule additional jobs with 'afterany' dependencies on the specified existing job.
+- `-s <script_to_schedule>`: Specify the script to schedule if using `-e`. This script will be submitted with 'afterany' dependencies when scheduling additional jobs based on an existing job.
+
+#### Example Usage
+
+1. Submit an initial job and two additional jobs with 'afterany' dependencies:
+   ```
+   ./slurm_scheduler.sh -i initial_job.sh
+   ```
+
+2. Use an existing job ID as a dependency and specify a script to schedule:
+   ```
+   ./slurm_scheduler.sh -e existing_job_id -s subsequent_job.sh
+   ```
+
+#### Job Scheduling Logic
+
+- For the `-i` case, the script submits an initial job and then schedules two additional jobs with 'afterany' dependencies on the initial job.
+- For the `-e` case, the script schedules one additional job with a 'afterany' dependency on either the existing job (if provided) or the previously submitted job.
+
+### Error Handling
+
+- The script includes error handling to check for invalid combinations of options and missing arguments.
+- If both `-i` and `-e` options are used simultaneously, an error message is displayed, and usage instructions are shown.
+- When using `-e`, the script checks that both an existing job ID and a script to schedule (`-s`) are provided; otherwise, an error message is displayed.
+
+### Dependencies
+
+- The script relies on the Slurm job scheduler (`sbatch`) for job submissions and dependencies.
+  
 ## rush.py
 
 `rush.py` is a simple script which generates a "rides list" - assigning potential new members brothers. It was created to aid me in my position as Rush Chairman at Sigma Chi at Purdue.
